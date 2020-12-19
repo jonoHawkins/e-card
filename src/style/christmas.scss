@@ -1,0 +1,90 @@
+$themes: 6;
+$number: 1;
+$red: #d80c0c;
+$green: #206d20;
+
+body {
+    font-family: "Pacifico", cursive;
+}
+
+.welcome {
+    text-align: center;
+    padding: 1rem;
+
+    h1 {
+        color: $red;
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+    button {
+        font-size: 2rem;
+    }
+}
+button {
+    cursor: pointer;
+    font: inherit;
+    padding: 0.5em 1em;
+    margin: 1rem;
+    color: #fff;
+    background: $green;
+    border: none;
+    border-radius: 1000rem;
+}
+
+
+.randomize-btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+.s-theme {
+    background-size: contain;
+    font-size: 6vmin;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    flex-direction: column;
+
+    .msg__greeting,
+    .msg__main,
+    .msg__sign-off {
+        --color-1: #{$red};
+        --color-2: #{$green};
+        $size: 1rem;
+        background: -webkit-repeating-linear-gradient(
+            45deg,
+            var(--color-1) 0,
+            var(--color-1) ($size * 0.5),
+            var(--color-2) ($size * 0.5),
+            var(--color-2) $size
+        );
+        background-repeat: repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .msg {
+        // width: 400px;
+        min-height: auto;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 1rem;
+        backdrop-filter: blur(3px);
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 3px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@while $number <= $themes {
+    .s-theme--#{$number} {
+        background-image: url(../images/christmas/#{$number}.jpg);
+    }
+
+    $number: $number + 1;
+}

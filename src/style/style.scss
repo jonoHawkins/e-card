@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.msg {
+    display: grid;
+    gap: 1.5rem;
+    text-align: center;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.msg > * {
+    white-space: pre-wrap;
+}

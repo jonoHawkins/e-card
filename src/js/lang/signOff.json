@@ -1,0 +1,6 @@
+[
+    "From,\n${from}",
+    "Kind Regards,\n${from}",
+    "Apologies,\n${from}",
+    "Byeee 👋,\n${from}"
+]
